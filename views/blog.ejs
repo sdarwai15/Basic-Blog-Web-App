@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        background-color: rgb(194, 194, 194);
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <div id="container">
+        <%data.forEach(function(val){ %>
+        <div class="main">
+           
+                <%= val.post.substring(0,35) + '...' %>
+                <div id="buttons"> <a href="/blog/post/<%=val._id%>">Show More</a>
+                    <a href="/delete/<%=val._id%>">Delete</a>
+                    <a href="/update/<%=val._id%>">Update</a></div>
+               
+          
+        </div>
+        <% })%>
+    </div>
+    
+    
+   
+</body>
+</html>
